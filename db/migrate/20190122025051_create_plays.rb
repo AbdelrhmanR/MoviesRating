@@ -2,7 +2,7 @@ class CreatePlays < ActiveRecord::Migration[5.1]
   def change
     create_table :plays do |t|
       t.string :title
-      t.string :description
+      t.text :description
       t.string :director
 
       t.timestamps

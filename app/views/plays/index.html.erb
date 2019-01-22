@@ -1,2 +1,5 @@
-<h1>Plays#index</h1>
-<p>Find me in app/views/plays/index.html.erb</p>
+<% @plays.each do |play|  %>
+   <h1><%= link_to play.title , play_path(play) %>  </h1>
+<% end  %>
+ 
+       <%=  link_to "Add new play", new_play_path %>

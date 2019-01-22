@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20190122025051) do
 
   create_table "plays", force: :cascade do |t|
     t.string "title"
-    t.string "description"
+    t.text "description"
     t.string "director"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
