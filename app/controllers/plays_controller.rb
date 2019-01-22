@@ -4,12 +4,12 @@ class PlaysController < ApplicationController
   	@plays =Play.all.order("created_at DESC")
   end
   def new
-  	@play =Play.new
+  	@play =  current_user.play.build  #Play.new
   end
   def show
   end
   def create
-  	@play =Play.new(play_params)
+  	@play = current_user.play.build(play_params)
   	if @play.save
   		redirect_to root_path
   	else
@@ -27,7 +27,7 @@ def update
 end
 def destroy
 	if @play.destroy
-       redirect_to root_path
+    redirect_to root_path
 	end
 end
 

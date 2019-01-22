@@ -6,9 +6,37 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
-    <%= yield %>
+
+	<nav class="nav navbar-default" style="background-color:	#F5F5DC ;>
+  		<div class="container">
+  			<div class="navbar-header">
+  				<%= link_to "PlayR" , root_path , class: "navbar-brand" %>
+  			</div>
+  			<ul class="nav navbar-nav navbar-right">
+  				<% if user_signed_in? %>
+  			    <li><%=link_to "Sign out" , destroy_user_session_path,method: :delete %></li>
+  				<%else%>
+  				<li><%=link_to "Sign up" , new_user_registration_path   %></li>
+  				<li><%=link_to "Log in" , new_user_session_path   %></li>
+  				<%end %>
+  			</ul>
+  			<ul class="nav navbar-nav">
+  				<%if user_signed_in? %>
+  				<li><%= link_to "Add play" , new_play_path %> </li>
+  				<%end%>
+  			</ul>
+  		</div>
+  	</nav>
+
+	  	   <p class="notice"><%= notice %></p>
+	       <p class="alert"><%= alert %></p>
+	       <div class="container">
+	       <%= yield %> 	
+	       </div>
+   
   </body>
 </html>
