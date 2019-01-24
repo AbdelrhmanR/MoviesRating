@@ -1,7 +1,12 @@
 class PlaysController < ApplicationController
   before_action :find_play , only: [:show, :update, :edit, :destroy]
   def index
+   	 if params[:category].blank?
   	@plays =Play.all.order("created_at DESC")
+       else
+       	@category_id = Category.find_by(name: params[:category]).id 
+        @plays = Play.where(:category_id => @category_id)
+     end
   end
 
 

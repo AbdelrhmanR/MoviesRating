@@ -11,19 +11,20 @@
 
   <body> 
 
-	<nav class="navbar navbar-default" >
+	<nav class="navbar navbar-default">
   		<div class="container">
-  			<div class="navbar-header">
-  				<%= link_to "PlayR" , root_path , class: "navbar-brand" %>
-  			</div>
+  			  <div class="navbar-header">
+  			  <div style="font-family: fantasy;">	<%= link_to "MoviesRush" , root_path , class: "navbar-brand" %> </div>
+  			  </div>
   			<ul class="nav navbar-nav navbar-right">
-  				<% if user_signed_in? %>
-  			    <li><%=link_to "Sign out" , destroy_user_session_path,method: :delete %></li>
-  				<%else%>
-  				<li><%=link_to "Sign up" , new_user_registration_path   %></li>
-  				<li><%=link_to "Log in" , new_user_session_path   %></li>
-  				<%end %>
+  				  <% if user_signed_in? %>
+  			       <li style="font-family: cursive; "><%=link_to "Sign out" , destroy_user_session_path,method: :delete %></li>
+  			  	<%else%>
+  				     <li style="font-family: cursive;"><%=link_to "Sign up" , new_user_registration_path   %></li>
+  				     <li style="font-family: cursive;"><%=link_to "Log in" , new_user_session_path   %></li>
+  				  <%end %>
   			</ul>
+
   			<ul class="nav navbar-nav">
             <li class="dropdown">
                <li class="dropdown-menue" role="menue">
@@ -36,7 +37,7 @@
             </li>
 
     				<%if user_signed_in? %>
-    				<li><%= link_to "Add play" , new_play_path %> </li>
+    				<li style="font-family: cursive;"><%= link_to "ADD MOVIE" , new_play_path %> </li>
     				<%end%>
   			</ul>
   		</div>
