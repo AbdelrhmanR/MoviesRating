@@ -1,2 +1,10 @@
 <h1> Edit play <%= @play.title %>  </h1>
-<%= render 'form' %>
+<%= simple_form_for @play , html: {multipart: true} do |f| %>
+<%= select_tag(:category_id, options_from_collection_for_select(Category.all, :id, :name), include_blank: @play.category.name )  %>
+  <%= f.input :title ,label: "play title"  %>
+  <%= f.input :description %>
+  <%= f.input :director %>
+  <%= f.button :submit %>
+<% end %>
+  
+ 

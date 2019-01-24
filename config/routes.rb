@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :plays 	
-  resources :categories
+  
+
   get 'plays/index'
   get 'plays/new'
    

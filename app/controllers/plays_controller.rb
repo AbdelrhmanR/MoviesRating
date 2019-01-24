@@ -3,12 +3,18 @@ class PlaysController < ApplicationController
   def index
   	@plays =Play.all.order("created_at DESC")
   end
+
+
   def new
   	@play = current_user.plays.build  
   	@categories = Category.all.map{ |c| [c.name, c.id]  }
   end
+
+
   def show
   end
+
+
   def create
   	@play = current_user.plays.build(play_params)
   	@play.category_id = params[:category_id]
@@ -18,9 +24,13 @@ class PlaysController < ApplicationController
   		render 'new'	
   	end
   end
+
+
 def eit
 	@categories = Category.all.map{ |c| [c.name, c.id]  }
 end
+
+
 def update
 	@play.category_id = params[:category_id]
 	if @play.update(play_params)
@@ -29,6 +39,8 @@ def update
 			render 'edit'
 	end
 end
+
+
 def destroy
 	if @play.destroy
     redirect_to root_path
