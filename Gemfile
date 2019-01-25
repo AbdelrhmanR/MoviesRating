@@ -10,6 +10,7 @@ end
 gem 'rails', '~> 5.1.6', '>= 5.1.6.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
+gem 'paperclip', '~> 4.3', '>= 4.3.6'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'simple_form', '~> 3.5'
 gem 'jquery-rails'
