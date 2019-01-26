@@ -54,7 +54,7 @@ end
 
   private
   def play_params
-  	params.require(:play).permit(:title ,:description ,:director,:category_id , :play_img )
+  	params.require(:play).permit(:title ,:description ,:director,:category_id  )
   end
   def find_play
    @play=Play.find(params[:id])

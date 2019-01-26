@@ -5,7 +5,7 @@ Rails.application.configure do
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
-
+  
 
   # Do not eager load code on boot.
   config.eager_load = false
@@ -54,7 +54,5 @@ Rails.application.configure do
   # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
     config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
     
-  Paperclip.options[:command_path] = 'C:\Program Files (x86)\GnuWin32\bin; C:\Program Files\ImageMagick-7.0.8-Q16'
-  Paperclip.options[:swallow_stderr] = false
 
 end
