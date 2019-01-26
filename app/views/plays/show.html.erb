@@ -1,14 +1,30 @@
-<h2> <%=  @play.title         %></h2>
-<h4> <%=  @play.category.name %></h4>
-<p>  <%=  @play.description   %></p>
-<h3> <span><em>From:</em></span> <%=  @play.director      %><h3>
+<div class="col-md-8">
+  <div class="play-info">
+		<h2 class="play-title"> <%=  @play.title         %></h2>
+		<h4 class="play-director"> <%=  @play.category.name %></h4>
+		<p class="play-desc">  <%=  @play.description   %></p>
+		<h3 class="play-director"> <span><em>From:</em></span> <%=  @play.director      %><h3>
+  </div>
+</div>
 
-<%= link_to  "Back"  , root_path   %>	
+<div class="row">
+	<div class="col-md-12">
+		<div class="reviews">
+			<h1>Reviews</h1>
+			  <%= render @play.reviews %>
+			  <div>
+			  	<%= link_to "Add reviews" , new_play_review_path(@play), class: "btn-custom"%>
+			  </div>
+		</div>
+	</div>
+</div>
+
+	
 <div class="links btn-group">
-<% if user_signed_in? %>
-<% if current_user.id == @play.user_id   %>
-<%= link_to  "Edit"  , edit_play_path(@play) %>
-<%= link_to  "Delete", play_path(@play) , method: :delete , data:{confirm: "Are you sure?"}  %>	
-<%end%>
-<%end%>
+	<% if user_signed_in? %>
+		<% if current_user.id == @play.user_id   %>
+			<%= link_to  "Edit"  , edit_play_path(@play) , class: "btn btn-custom" %>
+			<%= link_to  "Delete", play_path(@play) , method: :delete , data:{confirm: "Are you sure?"}, class: "btn btn-custom"%>	
+		<%end%>
+	<%end%>
 </div>
