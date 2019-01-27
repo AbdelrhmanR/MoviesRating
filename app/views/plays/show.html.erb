@@ -2,8 +2,13 @@
   <div class="play-info">
 		<h2 class="play-title"> <%=  @play.title         %></h2>
 		<h4 class="play-director"> <%=  @play.category.name %></h4>
-		<p class="play-desc">  <%=  @play.description   %></p>
 		<h3 class="play-director"> <span><em>From:</em></span> <%=  @play.director      %><h3>
+		<h4 class="avg-rating">Average rating</h4>
+		<div class="review-rating" data-score = <%= @average_review %> ></div>
+		<span class="number-of-reviews"><em> From: </em><%= @play.reviews.count %> reviews </span>
+		<hr>
+		<p class="play-desc">  <%=  @play.description   %></p>
+		
   </div>
 </div>
 
@@ -16,16 +21,27 @@
 	<%end%>
 </div>
 
+
+
 <div class="row">
 	<div class="col-md-12">
 		<div class="reviews">
+			<div>
+			  	<%= link_to "Add review" , new_play_review_path(@play), class: "btn-custom"%>
+			  </div>
 			<h1>Reviews</h1>
 			  <%= render @play.reviews %>
-			  <div>
-			  	<%= link_to "Add reviews" , new_play_review_path(@play), class: "btn-custom"%>
-			  </div>
 		</div>
 	</div>
 </div>
 
+<script>
+	$('.review-rating').raty({
+		readOnly: true ,
+        score: function(){
+        	return $(this).attr('data-score');
+        },
+        path: '/assets/'
+	});
+</script>
 	
