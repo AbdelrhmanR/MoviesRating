@@ -52,7 +52,8 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
     config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-    Paperclip.options[:command_path] = "C:\Program Files (x86)\GnuWin32\bin;C:\Program Files\ImageMagick-7.0.8-Q16"
+    Paperclip.options[:command_path] = 'C:\Program Files (x86)\GnuWin32\bin;C:\Program Files\ImageMagick-7.0.8-Q16'
+     config.serve_static_assets = false
 
     
 

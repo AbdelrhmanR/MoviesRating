@@ -7,7 +7,7 @@
     	<% @plays.each do |play| %>
     	    <div class="col-md-3">
     	        <a href="/plays/ <%= play.id %>">
-                    <%= image_tag play.avatar.url(:play_index), class: "play" %>
+                    <%= image_tag play.avatar.url, class: "play" %>
     	        </a>
             </div>
         <%end%>
