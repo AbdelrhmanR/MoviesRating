@@ -1,5 +1,6 @@
 <h1> Edit play <%= @play.title %>  </h1>
 <%= simple_form_for @play  do |f| %>
+<%= f.file_field :avatar %>
 <%= select_tag(:category_id, options_from_collection_for_select(Category.all, :id, :name), include_blank: @play.category.name )  %>
   <%= f.input :title ,label: "play title"  %>
   <%= f.input :description %>
